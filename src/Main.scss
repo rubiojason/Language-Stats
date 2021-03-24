@@ -1,0 +1,278 @@
+
+body {
+    margin: 0px; 
+    background-color: rgb(240, 240, 240); 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.center {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+$main-color: rgb(144, 19, 247); 
+$secondary-color: rgb(5, 255, 255); 
+$text-color: rgb(20, 20, 20); 
+
+.page-container {
+    width: 100%; 
+    height: auto; 
+
+    .left-side-container { 
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        background-color: rgb(240, 240, 240); 
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        flex-direction: column;
+
+        .img-container {
+            width: 90%; 
+            height: auto; 
+            @extend .center; 
+
+            img {
+                width: 50%; 
+                height: auto; 
+            }
+        }
+
+        .left-side-box {
+            width: 90%; 
+            height: 65%; 
+            border-radius: 20px; 
+            //background-color: white; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-evenly;
+            align-items: center; 
+
+            .compare-button {
+                width: 100%; 
+                height: 50px;
+                background-color: white; 
+                border-radius: 30px; 
+                @extend .center; 
+                cursor: pointer;
+            }
+
+            .other-button {
+                width: 100%; 
+                height: 50px; 
+                background-color: rgb(240, 240, 240); 
+                border-radius: 30px;
+                @extend .center; 
+                cursor: pointer; 
+            }
+        }
+    }
+
+    .right-side-container {
+        width: 80%; 
+        height: auto; 
+        margin-left: 20%; 
+        background-color: rgb(240, 240, 240); 
+        @extend .center; 
+        flex-direction: column; 
+
+        .input-container {
+            width: 100%; 
+            height: auto; 
+            @extend .center; 
+            flex-direction: column; 
+            justify-content: space-evenly;
+            margin: 30px 0px; 
+            padding: 10px 0px; 
+
+            .left-select {
+                width: 20px; 
+                height: 20px; 
+                border-radius: 100%; 
+                background-color:rgb(144, 19, 247); 
+            }
+
+            .right-select {
+                width: 20px; 
+                height: 20px; 
+                border-radius: 100%; 
+                background-color: rgb(5, 255, 255); 
+            }
+
+            select {
+                width: 150px; 
+                height: 40px; 
+                border-radius: 5px; 
+                border: 2px rgba(0, 0, 0, 0) solid;
+                color: $text-color; 
+                outline: none; 
+                border-radius: 5px; 
+                transition: border 1000ms;
+                font-weight: 500; 
+
+                &:focus {
+                    border: 2px solid rgb(144, 19, 247); 
+                }
+            }
+
+            .main-button {
+                width: 150px; 
+                height: 40px; 
+                border-radius: 20px; 
+                border: 2px $main-color solid; 
+                background-color:rgba(144, 19, 247, 0.1);
+                color: $main-color; 
+                font-weight: 600; 
+                font-size: 16px; 
+                cursor: pointer; 
+                outline: none;
+                transition: background-color 800ms; 
+                margin: 10px 0px; 
+
+                &:hover {
+                    background-color: rgba(144, 19, 247, 0.2); 
+                }
+            }
+        }
+        .graph-container {
+            width: 100%; 
+            margin-top: 30px; 
+            @extend .center; 
+            flex-direction: column; 
+
+            .line-graph-donut-container {
+                width: 100%; 
+                height: auto; 
+                @extend .center; 
+                flex-direction: row; 
+                justify-content: space-evenly; 
+                margin: 20px 0px; 
+
+                .line-div {
+                    width: 55%; 
+                    height: auto; 
+                    padding: 30px; 
+                    background-color: white; 
+                    border-radius: 30px; 
+                    margin: 50px 0px; 
+                }
+
+                .donut-div {
+                    width: 30%; 
+                    height: auto; 
+                    padding: 30px 0px; 
+                    background-color: white; 
+                    border-radius: 30px; 
+                    margin: 30px 0px; 
+                }
+            }
+
+            .bar-graph-pie-container {
+                width: 100%; 
+                height: auto; 
+                @extend .center; 
+                flex-direction: row; 
+                justify-content: space-evenly; 
+                margin: 20px 0px; 
+
+                .bar-div {
+                    width: 55%; 
+                    height: auto; 
+                    padding: 30px; 
+                    background-color: white; 
+                    border-radius: 30px; 
+                    margin: 50px 0px; 
+                }
+
+                .pie-div {
+                    width: 30%; 
+                    height: auto; 
+                    padding: 30px 0px; 
+                    background-color: white; 
+                    border-radius: 30px 0px; 
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .page-container .right-side-container .input-container select {
+        width: 100px !important; 
+        height: 30px !important; 
+        font-size: 14px !important; 
+    }
+
+    .main-button {
+        width: 130px !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: column !important; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: column !important; 
+    }
+
+    .graph-container {
+        margin-top: 0px !important; 
+    }
+
+    .line-div {
+        width: 75% !important; 
+    }
+
+    .donut-div {
+        width: 60% !important; 
+    }
+
+    .pie-div {
+        width: 60% !important; 
+    }
+
+    .bar-div {
+        width: 75% !important; 
+    }
+}
+
+@media (max-width: 600px) {
+    .left-side-container {
+        position: static !important; 
+        width: 100% !important; 
+        height: auto !important; 
+    }
+
+    .right-side-container {
+        width: 100% !important; 
+        margin-left: 0px !important; 
+        margin-top: 25px !important; 
+    }
+
+    .img-container {
+        width: 30% !important; 
+        margin: 10px 0px !important; 
+    }
+
+    .line-div {
+        margin-top: 0px !important; 
+    }
+}
+
+@media (max-width: 450px) {
+    .input-container select {
+        width: 100px !important; 
+    }
+}
+
+
+.input-stuff-container {
+    width: 100%; 
+    @extend .center; 
+    flex-direction: row;
+    justify-content: space-evenly; 
+}
