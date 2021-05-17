@@ -3,6 +3,7 @@ body {
     margin: 0px; 
     background-color: rgb(240, 240, 240); 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px; 
 }
 
 .center {
@@ -11,6 +12,8 @@ body {
     align-items: center;
 }
 
+optgroup { font-size: 15px; }
+
 $main-color: rgb(144, 19, 247); 
 $secondary-color: rgb(5, 255, 255); 
 $text-color: rgb(20, 20, 20); 
@@ -18,21 +21,25 @@ $text-color: rgb(20, 20, 20);
 .page-container {
     width: 100%; 
     height: auto; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
 
     .left-side-container { 
-        width: 20%; 
-        height: 100%; 
-        position: fixed; 
+        width: 100%; 
+        height: auto; 
         background-color: rgb(240, 240, 240); 
         display: flex; 
         justify-content: center;
         align-items: center; 
-        flex-direction: column;
+        flex-direction: column; 
 
         .img-container {
             width: 90%; 
             height: auto; 
             @extend .center; 
+            margin: 20px 0px; 
 
             img {
                 width: 50%; 
@@ -71,12 +78,12 @@ $text-color: rgb(20, 20, 20);
     }
 
     .right-side-container {
-        width: 80%; 
+        width: 95%; 
         height: auto; 
-        margin-left: 20%; 
         background-color: rgb(240, 240, 240); 
-        @extend .center; 
-        flex-direction: column; 
+        display: flex; 
+        flex-direction: column;
+        margin: 50px 0px; 
 
         .input-container {
             width: 100%; 
@@ -84,7 +91,7 @@ $text-color: rgb(20, 20, 20);
             @extend .center; 
             flex-direction: column; 
             justify-content: space-evenly;
-            margin: 30px 0px; 
+            margin: 10px 0px; 
             padding: 10px 0px; 
 
             .left-select {
@@ -102,7 +109,7 @@ $text-color: rgb(20, 20, 20);
             }
 
             select {
-                width: 150px; 
+                width: 120px; 
                 height: 40px; 
                 border-radius: 5px; 
                 border: 2px rgba(0, 0, 0, 0) solid;
@@ -125,11 +132,10 @@ $text-color: rgb(20, 20, 20);
                 background-color:rgba(144, 19, 247, 0.1);
                 color: $main-color; 
                 font-weight: 600; 
-                font-size: 16px; 
                 cursor: pointer; 
                 outline: none;
                 transition: background-color 800ms; 
-                margin: 10px 0px; 
+                margin: 20px 0px; 
 
                 &:hover {
                     background-color: rgba(144, 19, 247, 0.2); 
@@ -138,7 +144,7 @@ $text-color: rgb(20, 20, 20);
         }
         .graph-container {
             width: 100%; 
-            margin-top: 30px; 
+            margin-top: 10px 0px; 
             @extend .center; 
             flex-direction: column; 
 
@@ -146,26 +152,28 @@ $text-color: rgb(20, 20, 20);
                 width: 100%; 
                 height: auto; 
                 @extend .center; 
-                flex-direction: row; 
+                flex-direction: column; 
                 justify-content: space-evenly; 
-                margin: 20px 0px; 
+                margin: 5px 0px; 
 
                 .line-div {
-                    width: 55%; 
+                    width: 85%; 
                     height: auto; 
                     padding: 30px; 
                     background-color: white; 
                     border-radius: 30px; 
-                    margin: 50px 0px; 
+                    margin: 15px 0px; 
+                    @extend .center; 
                 }
 
                 .donut-div {
-                    width: 30%; 
+                    width: 75%; 
                     height: auto; 
                     padding: 30px 0px; 
                     background-color: white; 
                     border-radius: 30px; 
                     margin: 30px 0px; 
+                    @extend .center; 
                 }
             }
 
@@ -173,106 +181,503 @@ $text-color: rgb(20, 20, 20);
                 width: 100%; 
                 height: auto; 
                 @extend .center; 
-                flex-direction: row; 
+                flex-direction: column; 
                 justify-content: space-evenly; 
-                margin: 20px 0px; 
+                margin: 5px 0px; 
 
                 .bar-div {
-                    width: 55%; 
+                    width: 85%; 
                     height: auto; 
                     padding: 30px; 
                     background-color: white; 
                     border-radius: 30px; 
-                    margin: 50px 0px; 
+                    margin: 15px 0px; 
+                    @extend .center; 
                 }
 
                 .pie-div {
-                    width: 30%; 
+                    width: 75%; 
                     height: auto; 
                     padding: 30px 0px; 
                     background-color: white; 
                     border-radius: 30px 0px; 
+                    margin: 30px 0px; 
+                    @extend .center; 
                 }
             }
         }
     }
 }
 
-@media (max-width: 850px) {
-    .page-container .right-side-container .input-container select {
-        width: 100px !important; 
-        height: 30px !important; 
-        font-size: 14px !important; 
-    }
-
-    .main-button {
-        width: 130px !important;
-    }
-}
-
-@media (max-width: 800px) {
-    .page-container .right-side-container .graph-container .line-graph-donut-container {
-        flex-direction: column !important; 
-    }
-
-    .page-container .right-side-container .graph-container .bar-graph-pie-container {
-        flex-direction: column !important; 
-    }
-
-    .graph-container {
-        margin-top: 0px !important; 
-    }
-
-    .line-div {
-        width: 75% !important; 
-    }
-
-    .donut-div {
-        width: 60% !important; 
-    }
-
-    .pie-div {
-        width: 60% !important; 
-    }
-
-    .bar-div {
-        width: 75% !important; 
-    }
-}
-
-@media (max-width: 600px) {
-    .left-side-container {
-        position: static !important; 
-        width: 100% !important; 
-        height: auto !important; 
-    }
-
-    .right-side-container {
-        width: 100% !important; 
-        margin-left: 0px !important; 
-        margin-top: 25px !important; 
-    }
-
-    .img-container {
-        width: 30% !important; 
-        margin: 10px 0px !important; 
-    }
-
-    .line-div {
-        margin-top: 0px !important; 
-    }
-}
-
-@media (max-width: 450px) {
-    .input-container select {
-        width: 100px !important; 
-    }
-}
-
-
 .input-stuff-container {
     width: 100%; 
     @extend .center; 
     flex-direction: row;
     justify-content: space-evenly; 
+}
+
+@media only screen and (min-width: 500px) and (max-width: 900px) {
+    .page-container .left-side-container .img-container img {
+        width: 15%; 
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1600px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .line-div {
+        width: 55%; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .donut-div {
+        width: 30%; 
+    }
+    
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .pie-div {
+        width: 30%; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .bar-div {
+        width: 55%; 
+    }
+}
+
+@media only screen and (min-width: 1601px) and (max-width: 2200px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .line-div {
+        width: 55%; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .donut-div {
+        width: 30%; 
+    }
+    
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .pie-div {
+        width: 30%; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .bar-div {
+        width: 55%; 
+    }
+
+    .page-container .left-side-container .left-side-box .compare-button {
+        font-size: 1.5em; 
+    }
+
+    .page-container .left-side-container .left-side-box .other-button {
+        font-size: 1.5em; 
+    }
+
+    .page-container .right-side-container .input-container select {
+        width: 250px; 
+        height: 45px; 
+        font-size: 1.1em; 
+    }
+
+    .page-container .right-side-container .input-container .left-select {
+        width: 35px; 
+        height: 35px; 
+    }
+
+    .page-container .right-side-container .input-container .right-select {
+        width: 35px; 
+        height: 35px; 
+    }
+
+    .page-container .right-side-container .input-container .main-button {
+        width: 225px; 
+        height: 50px; 
+        border-radius: 30px; 
+        font-size: 1.25em; 
+    }
+
+    #red-error {
+        font-size: 1.5em; 
+    }
+}
+
+@media only screen and (min-width: 2201px) and (max-width: 2600px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .line-div {
+        width: 55%; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .donut-div {
+        width: 30%; 
+    }
+    
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .pie-div {
+        width: 30%; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .bar-div {
+        width: 55%; 
+    }
+
+    .page-container .left-side-container .left-side-box .compare-button {
+        font-size: 1.95em; 
+    }
+
+    .page-container .left-side-container .left-side-box .other-button {
+        font-size: 1.95em; 
+    }
+
+    .page-container .right-side-container .input-container select {
+        width: 275px; 
+        height: 50px; 
+        font-size: 1.45em; 
+    }
+
+    .page-container .right-side-container .input-container .left-select {
+        width: 35px; 
+        height: 35px; 
+    }
+
+    .page-container .right-side-container .input-container .right-select {
+        width: 35px; 
+        height: 35px; 
+    }
+
+    .page-container .right-side-container .input-container .main-button {
+        width: 325px; 
+        height: 60px; 
+        border-radius: 30px; 
+        font-size: 1.5em; 
+    }
+
+    #red-error {
+        font-size: 1.5em; 
+    }
+}
+
+@media only screen and (min-width: 2601px) and (max-width: 3200px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .line-div {
+        width: 55%; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .donut-div {
+        width: 30%; 
+    }
+    
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .pie-div {
+        width: 30%; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .bar-div {
+        width: 55%; 
+    }
+
+    .page-container .left-side-container .left-side-box .compare-button {
+        font-size: 2.5em; 
+        height: 90px; 
+        border-radius: 65px; 
+    }
+
+    .page-container .left-side-container .left-side-box .other-button {
+        font-size: 2.5em; 
+        height: 90px;
+        border-radius: 65px; 
+    }
+
+    .page-container .right-side-container .input-container select {
+        width: 350px; 
+        height: 65px; 
+        font-size: 1.95em; 
+    }
+
+    .page-container .right-side-container .input-container .left-select {
+        width: 35px; 
+        height: 35px; 
+    }
+
+    .page-container .right-side-container .input-container .right-select {
+        width: 35px; 
+        height: 35px; 
+    }
+
+    .page-container .right-side-container .input-container .main-button {
+        width: 400px; 
+        height: 80px; 
+        border-radius: 75px; 
+        font-size: 2em; 
+        margin-top: 50px; 
+    }
+
+    #red-error {
+        font-size: 1.5em; 
+    }
+}
+
+@media only screen and (min-width: 3201px) and (max-width: 4000px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .line-div {
+        width: 55%; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .donut-div {
+        width: 30%; 
+    }
+    
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .pie-div {
+        width: 30%; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .bar-div {
+        width: 55%; 
+    }
+
+    .page-container .left-side-container .left-side-box .compare-button {
+        font-size: 3em; 
+        height: 100px; 
+        border-radius: 65px; 
+    }
+
+    .page-container .left-side-container .left-side-box .other-button {
+        font-size: 3em; 
+        height: 100px;
+        border-radius: 65px; 
+    }
+
+    .page-container .right-side-container .input-container select {
+        width: 400px; 
+        height: 75px; 
+        font-size: 2.5em; 
+    }
+
+    .page-container .right-side-container .input-container .left-select {
+        width: 50px; 
+        height: 50px; 
+    }
+
+    .page-container .right-side-container .input-container .right-select {
+        width: 50px; 
+        height: 50px; 
+    }
+
+    .page-container .right-side-container .input-container .main-button {
+        width: 500px; 
+        height: 100px; 
+        border-radius: 75px; 
+        font-size: 2.5em; 
+        margin-top: 50px; 
+    }
+
+    #red-error {
+        font-size: 1.5em; 
+    }
+}
+
+@media only screen and (min-width: 4001px) {
+    .page-container .left-side-container {
+        width: 20%; 
+        height: 100%; 
+        position: fixed; 
+        margin: 0px; 
+    }
+
+    .page-container .right-side-container {
+        width: 80%; 
+        margin-left: 20%; 
+    }
+
+    .page-container {
+        display: unset; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .line-div {
+        width: 55%; 
+    }
+
+    .page-container .right-side-container .graph-container .line-graph-donut-container .donut-div {
+        width: 30%; 
+    }
+    
+    .page-container .right-side-container .graph-container .bar-graph-pie-container {
+        flex-direction: row; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .pie-div {
+        width: 30%; 
+    }
+
+    .page-container .right-side-container .graph-container .bar-graph-pie-container .bar-div {
+        width: 55%; 
+    }
+
+    .page-container .left-side-container .left-side-box .compare-button {
+        font-size: 3.5em; 
+        height: 125px; 
+        border-radius: 100px; 
+    }
+
+    .page-container .left-side-container .left-side-box .other-button {
+        font-size: 3em; 
+        height: 100px;
+        border-radius: 65px; 
+    }
+
+    .page-container .right-side-container .input-container select {
+        width: 600px; 
+        height: 100px; 
+        font-size: 2.75em; 
+    }
+
+    .page-container .right-side-container .input-container .left-select {
+        width: 75px; 
+        height: 75px; 
+    }
+
+    .page-container .right-side-container .input-container .right-select {
+        width: 75px; 
+        height: 75px; 
+    }
+
+    .page-container .right-side-container .input-container .main-button {
+        width: 500px; 
+        height: 100px; 
+        border-radius: 75px; 
+        font-size: 2.5em; 
+        margin-top: 50px; 
+    }
+
+    #red-error {
+        font-size: 1.5em; 
+    }
 }

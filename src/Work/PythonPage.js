@@ -55,7 +55,7 @@ function PythonPage() {
         scales: {
             yAxes: [
                 {
-                    ticks: { min: 60000, max: 130000, stepSize: 17500}
+                    ticks: { min: 60000, max: 130000, stepSize: 30000}
                 }
             ]
         }
@@ -83,7 +83,7 @@ function PythonPage() {
         scales: {
             yAxes: [
                 {
-                    ticks: { min: 8000, max: 35000, stepSize: 6750}
+                    ticks: { min: 8000, max: 35000, stepSize: 15000}
                 }
             ]
         }
@@ -111,7 +111,7 @@ function PythonPage() {
     }
 
     return (
-        <div className="page-container">
+        <div className="lan-page-container">
 
             <div className="left-side-container">
                 <div className="img-container">

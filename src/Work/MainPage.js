@@ -240,7 +240,8 @@ function MainPage() {
         scales: {
             yAxes: [
                 {
-                    ticks: { min: 60000, max: 130000, stepSize: 17500}
+                    //ticks: { min: 60000, max: 130000, stepSize: 17500}
+                    ticks: { min: 60000, max: 130000, stepSize: 40000 }
                 }
             ]
         }
@@ -282,7 +283,7 @@ function MainPage() {
         scales: {
             yAxes: [
                 {
-                    ticks: { min: 8000, max: 35000, stepSize: 6750}
+                    ticks: { min: 8000, max: 35000, stepSize: 12000}
                 }
             ]
         }
@@ -415,19 +416,23 @@ function MainPage() {
                     <div className="input-stuff-container">
                         <div className="left-select"></div>
                         <select onChange={firstLanChange} >
-                            <option defaultValue>Choose an option</option>
-                            <option value="Java">Java</option>
-                            <option value="Python">Python</option>
-                            <option value="C#">C#</option>
-                            <option value="Javascript">Javascript</option>
+                            <optgroup>
+                                <option defaultValue>Choose</option>
+                                <option value="Java">Java</option>
+                                <option value="Python">Python</option>
+                                <option value="C#">C#</option>
+                                <option value="Javascript">Javascript</option>
+                            </optgroup>
                         </select>
 
                         <select onChange={secondLanChange}>
-                            <option defaultValue>Choose an option</option>
-                            <option value="Java">Java</option>
-                            <option value="Python">Python</option>
-                            <option value="C#">C#</option>
-                            <option value="Javascript">Javascript</option>
+                            <optgroup>
+                                <option defaultValue>Choose</option>
+                                <option value="Java">Java</option>
+                                <option value="Python">Python</option>
+                                <option value="C#">C#</option>
+                                <option value="Javascript">Javascript</option>
+                            </optgroup>
                         </select>
                         <div className="right-select"></div>
                     </div>
@@ -436,7 +441,7 @@ function MainPage() {
 
                 </form>
 
-                <div style={{opacity: errorOpacity, color: "red"}}>You cannot input the same language</div>
+                <div id="red-error" style={{opacity: errorOpacity, color: "red"}}>You cannot input the same language</div>
                 
                 <div className="graph-container">
                     <div className="line-graph-donut-container">
